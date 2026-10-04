@@ -3,6 +3,9 @@ name: Mimin NVE ID
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   send-rules:
@@ -26,6 +29,9 @@ jobs:
                 "title": "📜 PERATURAN SERVER",
                 "description": "Selamat datang di **SERVER NEMESIS VANGUARD ELITE ID**. Seluruh anggota diwajibkan membaca, memahami, dan mematuhi peraturan berikut demi menjaga komunitas yang aman, nyaman, dan sportif.",
                 "color": 15158332,
+                "thumbnail": {
+                  "url": "https://raw.githubusercontent.com/gustiyahomer-mbg/Mimin-NVE-ID/main/ezgif-3d0d14456fb883cf.gif"
+                },
                 "fields": [
                   {
                     "name": "01. 🤝 Saling Menghormati",
