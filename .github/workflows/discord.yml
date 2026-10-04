@@ -20,7 +20,7 @@ jobs:
           --data-binary @- \
           "$DISCORD_WEBHOOK" <<'JSON'
           {
-            "username": "NEMESIS VANGUARD ELITE ID",
+            "username": "Mimin NVE ID",
             "embeds": [
               {
                 "title": "📜 PERATURAN SERVER",
