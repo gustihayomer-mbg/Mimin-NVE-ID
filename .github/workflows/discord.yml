@@ -1,0 +1,80 @@
+
+name: NEMESIS VANGUARD ELITE ID
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send Server Rules Embed
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+        run: |
+          curl -sS --fail-with-body \
+          -H "Content-Type: application/json" \
+          -X POST \
+          --data-binary @- \
+          "$DISCORD_WEBHOOK" <<'JSON'
+          {
+            "username": "NEMESIS VANGUARD ELITE ID",
+            "embeds": [
+              {
+                "title": "📜 PERATURAN SERVER",
+                "description": "Selamat datang di **SERVER NEMESIS VANGUARD ELITE ID**. Seluruh anggota diwajibkan membaca, memahami, dan mematuhi peraturan berikut demi menjaga komunitas yang aman, nyaman, dan sportif.",
+                "color": 15158332,
+                "fields": [
+                  {
+                    "name": "01. 🤝 Saling Menghormati",
+                    "value": "Semua anggota harus memperlakukan satu sama lain dengan sopan dan hormat. Penghinaan, serangan pribadi, atau perilaku toxic tidak akan ditoleransi.",
+                    "inline": false
+                  },
+                  {
+                    "name": "02. 🚫 Dilarang Spam",
+                    "value": "Hindari membanjiri obrolan dengan pesan yang berulang-ulang, tidak relevan, atau tidak berarti. Hal ini termasuk penggunaan emoji, karakter khusus, atau pesan spam yang berlebihan.",
+                    "inline": false
+                  },
+                  {
+                    "name": "03. ⛔ Dilarang Cheating",
+                    "value": "Penggunaan atau penjualan segala jenis cheat, peretasan, eksploitasi, atau modifikasi yang tidak sah dilarang keras dan akan mengakibatkan pelarangan langsung.\n\n**⚠️ NOTE: AKAN DI-BAN DARI SERVER.**",
+                    "inline": false
+                  },
+                  {
+                    "name": "04. 🔒 Privasi dan Keamanan",
+                    "value": "Jangan membagikan informasi pribadi Anda atau anggota lain tanpa persetujuan. Hormati privasi orang lain dan hindari perilaku apa pun yang dapat membahayakan keamanan server.",
+                    "inline": false
+                  },
+                  {
+                    "name": "05. ✉️ DM Spam",
+                    "value": "Dilarang keras mengirimkan spam chat yang tidak diminta atau tidak diinginkan kepada anggota server lain.",
+                    "inline": false
+                  },
+                  {
+                    "name": "06. ⚖️ Menghormati Keputusan Pengurus",
+                    "value": "Keputusan ADMIN harus dihormati dan diikuti. Mendebat atau menentang keputusan dengan cara yang tidak sopan akan mengakibatkan hukuman.",
+                    "inline": false
+                  },
+                  {
+                    "name": "07. 🚷 Dilarang Jual Beli Akun BloodStrike",
+                    "value": "DILARANG KERAS SHARE JUAL BELI AKUN BLOODSTRIKE.\n\n**⚠️ NOTE: AKAN TERKENA TO.**",
+                    "inline": false
+                  },
+                  {
+                    "name": "⚠️ PERINGATAN AKHIR",
+                    "value": "Melanggar peraturan ini akan mengakibatkan pelarangan server dan di-kick dari server. Penerapan yang ketat dari pedoman ini sangat penting untuk menjaga lingkungan yang sehat dan adil bagi semua anggota.",
+                    "inline": false
+                  }
+                ],
+                "footer": {
+                  "text": "NEMESIS VANGUARD ELITE ID • OFFICIAL SERVER RULES"
+                }
+              }
+            ],
+            "allowed_mentions": {
+              "parse": []
+            }
+          }
+          JSON
